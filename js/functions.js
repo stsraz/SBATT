@@ -16,25 +16,3 @@ var getCookie=function(cname) {
 	}
 	return "";
 };
-
-var validateLogin=function(key,name) {
-	var returnVar;
-	var data={
-		sbakey: key,
-		sbaname: name
-	};
-	$.post('php/callback.php',data,function(response) {
-		if(response!="") {
-			var ra=response.split(";");
-			setCookie("sba-key",ra[0],1);
-			setCookie("sba-name",ra[1],1);
-			returnVar=ra[2];
-		}
-		else{
-			setCookie("sba-key",0,0);
-			setCookie("sba-name",0,0);
-			returnVar="";
-		}
-	})	;
-	return returnVar;	
-};

@@ -1,7 +1,5 @@
 <?php
 
-	include_once 'php/database.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +23,8 @@
 				<h1>Starbucks Activations Tech Tracker</h1>
 			</header>
 			
+			<div id="dialogWrapper"></div>
+			
 			<div id="navWrapper"></div>
 			
 			<div id="mainWrapper"></div>
@@ -45,7 +45,7 @@
 		<script src="js/jquery/jquery-ui.js"></script>
 		<script src="js/md5.js"></script>
 		<!-- Add My Scripts -->
-		<!-- script src="js/cookies.js"></script -->
+		<script src="js/functions.js"></script>
 		<!-- Start Scene Controller -->
 		<script src="js/sceneControllers/scene-start.js"></script>
 	</body>

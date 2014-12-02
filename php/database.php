@@ -36,7 +36,18 @@ SQL;
 	}
 	public static function delete() {
 	}
-	public static function update() {
+	public static function update($where,$column,$value,$where) {
+		$setvar=$column."=".$value;
+		$dbconn=self::connect();
+		$sql = <<<SQL
+			UPDATE
+				$where
+			SET
+				$setvar
+			WHERE
+				$where
+SQL;
+		$dbconn->query($sql);
 	}
 }
 ?>

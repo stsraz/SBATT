@@ -1,8 +1,13 @@
-.menu {
-	position:absolute;
+.tabs {
+	left:11%;
+	width:85%
 }
 
-.tabs {
+.menu {
 	position:absolute;
-	left:20%;
+	width:10%;
+}
+
+h1 {
+	text-align:center;
 }

@@ -1,53 +1,47 @@
 /**
  * @Joe Rasmussen
  */
-
 $(document).ready(function() {
-	guestInit();
-	var role = $("#miscData").text();
+		sceneLoad();
 });
 
-var jqInit = function() {
-	$('.tabs').tabs();
-	$('#menu').menu();
-};
-
-var guestInit = function() {
-	// Not this for tech lead pmo and admin; load javascript which loads this
-	$('#navWrapper').load("templates/start.html #guestNavMenu",function() {jqInit();});
-	$('#mainWrapper').load("templates/start.html #guestTabs",function() {jqInit();});
-	$("loginButton").on("click",function() {
-		un=$("#username").val();
-		pw=$("#password").val();
-		data={
-			type:'login',
-			uname:un,
-			pword:pword
-		};
-		$.post('php/login.php',data,function(response){
-			if(response!="") {
-				loginInit(response);
-			}
-			else{
-				alert("Login failed.  Please try again.");
-			}
-		});
-	});
-};
-
-var loginInit = function(type) {
+var jqInit = function(type) {
 	switch(type) {
-		case 'tech':
-		    alert("Tech");
+		case "nav":
+			$('.menu').menu();
 			break;
-		case 'lead':
-		    alert("Lead");
-			break;
-		case 'pmo':
-		    alert("PMO");
-			break;
-		case 'admin':
-		    alert("Admin");
+		case "main":
+			$('.tabs').tabs();
+			$("#login").on("click",function() {login();});
 			break;
 	}
+};
+
+var sceneLoad=function () {
+	// Turn this into a generic function for pmo. lead, tech, guest, and admin
+	$('#navWrapper').load("templates/start.html #guestMenu",function() {jqInit("nav");});
+	$('#mainWrapper').load("templates/start.html #guestTabs",function() {jqInit("main");});
+};
+
+//Test Authentication
+var login=function() {
+	uname=$("#username").val();
+	payload=md5(uname+$("#password").val());
+	data={
+		uname:uname,
+		payload:payload
+	};
+	$.post('php/login.php',data,function(response) {
+		if(response!="") {
+			rarray=JSON.parse(response);
+			dname=rarray['dname'];
+			role=rarray['role'];
+			setCookie('skey',payload,1);
+			setCookie('uname',uname,1);
+			setCookie('dname',dname,1);
+			setCookie('role',role,1);
+			alert(dname);
+		}
+		else {alert("Login Failed");};
+	});
 };
