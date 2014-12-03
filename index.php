@@ -25,7 +25,12 @@
 			
 			<div id="dialogWrapper"></div>
 			
-			<div id="navWrapper"></div>
+			<div id="navWrapper">
+				<div id="navWrapper-1"></div>
+				<div id="navWrapper-2"></div>
+				<div id="navWrapper-3"></div>
+				<div id="navWrapper-4"></div>
+			</div>
 			
 			<div id="mainWrapper"></div>
 			

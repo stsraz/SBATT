@@ -1,47 +1,80 @@
-<ul id="guestMenu" class="menu">
-	<li>Home</li>
-	<li class="ui-state-disabled">Precheck</li>
-	<li class="ui-state-disabled">Tech Tracker</li>
-	<li class="ui-state-disabled">Post-Activation</li>
-	<br>
-	<li class="ui-state-disabled">EON</li>
-	<li class="ui-state-disabled">QMS</li>
-	<li class="ui-state-disabled">Pipeline</li>
-</ul>
-
-<div id="guestTabs" class="tabs">
+<!-- Guest User -->
+<div id="guestTabs" class="tabs-login ui-corner-all">
 	<ul>
 		<li><a href="#guest-1"><span id="guest-1-span">Log In</span></a></li>
+		<li><a href="#guest-2"><span id="guest-2-span">New User</span></a></li>
 	</ul>
 	<div id="guest-1" class="tabs">
-				<label for="username">Username: </label>
-				<input type="text" id="username" name="username"><br><br>
-				<label for="password">Password: </label>
-				<input type="password" id="password" name="password"><br><br>
-				<button type="button" id="login">Login</button>
+		<label for="username">Username: </label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="password">Password: </label>
+		<input type="password" id="password" name="password"><br><br>
+		<button type="button" id="login">Login</button>
+	</div>
+	<div id="guest-2" class="tabs">
+		<label for="firstname">First Name: </label>
+		<input type="text" id="firstname" name="firstname"><br><br>
+		<label for="lastname">Last Name: </label>
+		<input type="text" id="lastname" name="lastname"><br><br>
+		<label for="addrole">Requested Role: </label>
+		<select id="addrole" name="addrole">
+			<option value="tech">SA Tech</option>
+			<option value="pmo">PMO</option>
+			<option value="lead">Lead</option>
+			<option value="admin">Admin</option>
+		</select><br><br>
+		<label for="newpassword">Password: </label>
+		<input type="password" id="newpassword" name="newpassword"><br><br>
+		<label for="verifypassword">Verify Password: </label>
+		<input type="password" id="verifypassword" name="verifypassword"><br><br>
+		<button type="button" id="submit">Submit</button>
 	</div>
 </div>
 
-<div id="techNavMenu" class="menu">
-	<ul id="techMenu">
-		<li>Home</li>
-		<li>Precheck</li>
-		<li>Tech Tracker</li>
-		<li>Post-Activation</li>
-		<br>
-		<li>EON</li>
-		<li>QMS</li>
-		<li>Pipeline</li>
-	</ul>
-</div>
+<!-- Home -->
+<ul id="homeMenu" class="menu ui-corner-all">
+	<li id="home">Home</li>
+	<li id="profile">Profile</li>
+	<li id="logout">Logout</li>
+</ul>
 
-<div id="techTabs" class="tabs">
+<div id="homeTabs" class="tabs-login ui-corner-all">
 	<ul>
 		<li><a href="#home-1"><span id="home-1-span">News Feed</span></a></li>
 		<li><a href="#home-2"><span id="home-2-span">Wiki</span></a></li>
 		<li><a href="#home-3"><span id="home-3-span">Contact Lists</span></a></li>
 	</ul>
-	<div id="home-1">News Feed, Coming Soon!</div>
+	<div id="home-1">News Feed and Dashboard Statistics, Coming Soon!</div>
 	<div id="home-2">Wiki Access, Coming Soon!</div>
 	<div id="home-3">Contact Lists, Coming Soon!</div>
 </div>
+
+<div id="profileTabs" class="tabs ui-corner-all"></div>
+
+<!-- Tech -->
+<ul id="techMenu" class="menu ui-corner-all">
+	<li id="precheck">Precheck</li>
+	<li id="tracker">Tech Tracker</li>
+	<li id="postact">Post-Activation</li>
+	<br><br>
+</ul>
+
+<!-- Admin -->
+<ul id="adminMenu" class="menu ui-corner-all">
+	<li id="users">Users</li>
+	<li>Tech Tracker</li>
+	<li>Post-Activation</li>
+	<br><br>
+</ul>
+
+<div id="adminTabs" class="tabs-login ui-corner-all">
+	<ul>
+		<li><a href="#admin-1"><span id="admin-1-span">Precheck Statistics</span></a></li>
+		<li><a href="#admin-2"><span id="admin-2-span">In Depth Dashboard Analysis</span></a></li>
+		<li><a href="#admin-3"><span id="admin-3-span">Other Stuff</span></a></li>
+	</ul>
+	<div id="admin-1">Precheck Statisticss, Coming Soon!</div>
+	<div id="admin-2">In Depth Dashboard Analysis, Coming Soon!</div>
+	<div id="admin-3">Other Stuff, Coming Soon!</div>
+</div>
+

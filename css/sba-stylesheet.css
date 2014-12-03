@@ -1,6 +1,9 @@
 .tabs {
 	left:11%;
-	width:85%
+	width:85%;
+}
+.tabs-login {
+	width:100%;
 }
 
 .menu {
